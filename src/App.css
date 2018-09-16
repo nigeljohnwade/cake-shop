@@ -7,3 +7,6 @@ body{
 label{
     display: block;
 }
+nav > *{
+    margin-right: 1rem;
+}
