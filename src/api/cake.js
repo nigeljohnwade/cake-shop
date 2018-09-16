@@ -35,9 +35,10 @@ const fetchWithBodyWrapper = (url, method, body) => {
             'content-type': 'application/json'
         },
     }).then(response => {
-        if(response.ok){
-            return response.json();
-        }
+        return response.json()
+            .then(json => {
+                return response.ok ? json : Promise.reject(json);
+            });
     });
 }
 
