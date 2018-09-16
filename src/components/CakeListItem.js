@@ -5,16 +5,17 @@ export function CakeListItem(props) {
     const {
         name,
         imageUrl,
-        comment,
-        yumFactor,
-    } = props.element;
+    } = props;
     
-    return <li>
-        <h3>{name}</h3>
-        <img alt="" src={imageUrl}/>
-        <p>{comment}</p>
-        <p>Yum factor: {yumFactor}</p>
-    </li>;
+    return (
+        <li>
+            <p>{name}</p>
+            <img alt="" src={imageUrl}/>
+        </li>
+    );
 }
 
-CakeListItem.propTypes = {element: PropTypes.any};
+CakeListItem.propTypes = {
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+};

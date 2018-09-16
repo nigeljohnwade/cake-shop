@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import {getCakes} from "../api/cake";
-import {CakeList} from "./CakeList";
+import React, { Component, Fragment } from 'react';
+import { getCakes } from "../api/cake";
+import { CakeList } from "./CakeList";
 
 export default class Home extends Component{
     constructor(props){
@@ -21,6 +21,7 @@ export default class Home extends Component{
         const {
             data,
         } = this.state;
+        
         return (
             <Fragment>
             {
@@ -28,7 +29,7 @@ export default class Home extends Component{
                 <CakeList data={data} />
             }
             </Fragment>
-        )
+        );
     }
     
 }
