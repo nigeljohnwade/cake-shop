@@ -1,23 +1,34 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
+import New from './components/New';
+import Header from "./components/Header";
 
 class App extends Component {
     render() {
         return (
-            <Fragment>
-                <header className="header">
-                      <h1 className="title">Welcome to Cake</h1>
-                </header>
-                <main role="main">
-                    <Router>
+            <Router>
+                <Fragment>
+                    <Route
+                        path="/" 
+                        component={Header}
+                    />
+                    <main role="main">
                         <Switch>
-                            <Route path="/" component={Home}/>
+                            <Route
+                                path="/"
+                                exact={true}
+                                component={Home}
+                            />
+                            <Route 
+                                path="/new" 
+                                component={New}
+                            />
                         </Switch>
-                    </Router>
-                </main>
-            </Fragment>
+                    </main>
+                </Fragment>
+            </Router>
     );
   }
 }
