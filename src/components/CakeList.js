@@ -12,6 +12,7 @@ export function CakeList(props) {
                         return (
                             <CakeListItem 
                                 key={element.id} 
+                                id={element.id}
                                 imageUrl={element.imageUrl}
                                 name={element.name} 
                             />
