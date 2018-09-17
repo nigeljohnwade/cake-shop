@@ -77,6 +77,7 @@ export default class New extends Component{
                             name="imageUrl" 
                             id="imageUrl" 
                             value={imageUrl}
+                            type="url"
                             onChange={this.onChange}
                         />
                         <p>{error.imageUrl}</p>
@@ -87,6 +88,9 @@ export default class New extends Component{
                             name="yumFactor" 
                             id="yumFactor" 
                             value={yumFactor}
+                            type="number"
+                            min="1"
+                            max="5"
                             onChange={this.onChange}
                         />
                         <p>{error.yumFactor}</p>
@@ -98,7 +102,12 @@ export default class New extends Component{
                 }
                 {
                     submit &&
-                    <Redirect to="/"/>                
+                    <Redirect to={{
+                        pathname: "/",
+                        state: {
+                            message: `Cake ${name} created`,
+                        },
+                        }} />                
                 }
             </Fragment>
         );
